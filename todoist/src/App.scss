@@ -365,6 +365,7 @@ $generic-bg: #db4c3f;
   
     &__generic {
       li {
+        padding: 10px 0 10px 10px;
         list-style-type: none;
         color: #333;
         display: -webkit-box;
@@ -373,8 +374,7 @@ $generic-bg: #db4c3f;
         cursor: pointer;
         line-height: 1.50;
         font-size: 15px;
-        padding-left: 0;
-        padding-right: 0;
+        
   
         div:nth-child(1) {
           display: -webkit-box;
