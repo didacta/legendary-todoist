@@ -541,3 +541,18 @@ h2 {
   }
 }
 
+.add-task{
+
+}
+.add-task__plus, .add-project__plus{
+  color: #dd4b39;
+  font-size:22px;
+
+}
+
+.add-task__text, .add-project__text{
+  display:inline-block;
+  color: #545454;
+  font-size: 14px;
+  margin-left: 15px;
+}
