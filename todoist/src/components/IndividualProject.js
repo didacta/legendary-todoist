@@ -1,25 +1,23 @@
-/* eslint no-undef: "off"*/
-
-import React, { useState } from "react";
-import { FaTrashAlt } from "react-icons/fa";
-import { useProjectsValue, useSelectedProjectValue } from "../context";
-import { firebase } from "../firebase";
+import React, { useState } from 'react';
+import { FaTrashAlt } from 'react-icons/fa';
+import PropTypes from 'prop-types';
+import { useProjectsValue, useSelectedProjectValue } from '../context';
+import { firebase } from '../firebase';
 
 export const IndividualProject = ({ project }) => {
   const [showConfirm, setShowConfirm] = useState(false);
   const { projects, setProjects } = useProjectsValue();
-
   const { setSelectedProject } = useSelectedProjectValue();
 
   const deleteProject = docId => {
     firebase
       .firestore()
-      .collection("projects")
+      .collection('projects')
       .doc(docId)
       .delete()
       .then(() => {
         setProjects([...projects]);
-        setSelectedProject("INBOX");
+        setSelectedProject('INBOX');
       });
   };
 
@@ -30,8 +28,11 @@ export const IndividualProject = ({ project }) => {
       <span
         className="sidebar__project-delete"
         data-testid="delete-project"
-        onKeyDown={() => setShowConfirm(!showConfirm)}
         onClick={() => setShowConfirm(!showConfirm)}
+        onKeyDown={() => setShowConfirm(!showConfirm)}
+        tabIndex={0}
+        role="button"
+        aria-label="Confirm deletion of project"
       >
         <FaTrashAlt />
         {showConfirm && (
@@ -59,4 +60,8 @@ export const IndividualProject = ({ project }) => {
       </span>
     </>
   );
+};
+
+IndividualProject.propTypes = {
+  project: PropTypes.object.isRequired,
 };
