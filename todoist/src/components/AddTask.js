@@ -30,8 +30,43 @@ export const AddTask = ({
         .add(7, "days")
         .format("DD/MM/YYYY");
     }
-    return task && projectId && firebase.firestore();
+    return (
+      task &&
+      projectId &&
+      firebase
+        .firestore()
+        .collection("tasks")
+        .add({
+          archived: false,
+          projectId,
+          task,
+          date: collatedDate || taskDate,
+          userId: "jlIFXIwyAL3tzHMtzRbw"
+        })
+        .then(() => {
+          setTask("");
+          setProject("");
+          setShowMain("");
+          setShowProjectOverlay("");
+        })
+    );
   };
 
-  return <p>stop</p>;
+  return (
+    <div
+      className={showQuickAddTask ? "add-task add-task__overlay" : "add-tasl"}
+      data-testid="add-task-comp"
+    >
+      {showAddTaskMain && (
+        <div
+          className="add-task__shallow"
+          data-testid="show-main-action"
+          onClick={() => setShowMain(!showMain)}
+        >
+          <span className="add-task__plus">+</span>
+          <span className="add_task__text">Add Text</span>
+        </div>
+      )}
+    </div>
+  );
 };
