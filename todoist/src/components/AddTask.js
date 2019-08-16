@@ -87,6 +87,36 @@ export const AddTask = ({
               </div>
             </>
           )}
+          <p>Project overlay here</p>
+          <p>TaskDate here</p>
+          <input
+            className="add-task__content"
+            data-testid="add-task-content"
+            type="text"
+            value={task}
+            onChange={e => setTask(e.target.value)}
+          />
+          <button
+            type="button"
+            className="add-task__submit"
+            data-testid="add-task"
+            onClick={() => addTask()}
+          >
+            Add Task
+          </button>
+
+          {!showQuickAddTask && (
+            <span
+              className="add-task__cancel"
+              data-testid="add-task-main-cancel"
+              onClick={() => {
+                setShowMain(false);
+                setShowProjectOverlay(false);
+              }}
+            >
+              Cancel
+            </span>
+          )}
         </div>
       )}
     </div>
