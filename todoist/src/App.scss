@@ -614,6 +614,40 @@ header {
     @include btn(90px);
   }
 }
+
+.add-task__shallow,
+.add-project {
+  @include no-select;
+  cursor: pointer;
+  margin-bottom: 32.5px;
+}
+
+.task-date {
+  @include box-overlay();
+  background-color: #fff;
+  width: 200px;
+  right: 0;
+
+  &__list li {
+    @include task-item();
+
+    span:first-of-type {
+      margin-right: 10px;
+
+      svg {
+        fill: darkcyan !important;
+      }
+    }
+  }
+}
+
+.project-overlay{
+  @include box-overlay();
+  background-color:violet;
+  &__list li {
+    @include task-item();
+  }
+}
 .add-task__plus,
 .add-project__plus {
   color: #dd4b39;
