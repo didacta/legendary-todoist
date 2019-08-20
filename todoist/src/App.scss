@@ -35,7 +35,6 @@ $generic-border: 1px solid #f1f1f1;
 $generic-bg: #db4c3f;
 
 // Mixins
-
 @mixin box-overlay() {
   -webkit-box-shadow: $generic-box-shadow;
   box-shadow: $generic-box-shadow;
@@ -45,6 +44,7 @@ $generic-bg: #db4c3f;
   top: 85px;
   border-radius: 3px;
 }
+
 @mixin va($va-align: center) {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -71,6 +71,7 @@ $generic-bg: #db4c3f;
   -ms-user-select: none;
   user-select: none;
 }
+
 @mixin btn($width) {
   width: $width;
   background-color: $generic-bg;
@@ -90,6 +91,7 @@ $generic-bg: #db4c3f;
   text-align: center;
   cursor: pointer;
 }
+
 @mixin cancel() {
   color: #555;
   cursor: pointer;
@@ -263,9 +265,6 @@ header {
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
-      padding-left: 200px;
-      padding-top: 10px;
-      margin-bottom: 120px;
     }
   }
 
@@ -371,7 +370,6 @@ header {
 
   &__generic {
     li {
-      padding: 10px 0 10px 10px;
       list-style-type: none;
       color: #333;
       display: -webkit-box;
@@ -380,6 +378,8 @@ header {
       cursor: pointer;
       line-height: 1.5;
       font-size: 15px;
+      padding-left: 0;
+      padding-right: 0;
 
       div:nth-child(1) {
         display: -webkit-box;
@@ -425,8 +425,8 @@ header {
     width: 200px;
     padding: 10px;
     top: 10px;
-    right: 0;
-    background-color: mintcream;
+    right: 13;
+    background-color: white;
 
     p {
       margin-top: 5px;
@@ -641,9 +641,9 @@ header {
   }
 }
 
-.project-overlay{
+.project-overlay {
   @include box-overlay();
-  background-color:white;
+  background-color: white;
   &__list li {
     @include task-item();
   }
