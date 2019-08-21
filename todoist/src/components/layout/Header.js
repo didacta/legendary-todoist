@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { FaMoon } from "react-icons/fa";
 import { FaSun } from "react-icons/fa";
+import { AddTask } from "../AddTask";
 
 export const Header = ({ darkmode, setDarkMode }) => {
-  const [shouldShowMain, setShouldMain] = useState(false);
-  const [shouldQuickAddTask, setShowQuickAddTask] = useState(false);
+  const [shouldShowMain, setShouldShowMain] = useState(false);
+  const [showQuickAddTask, setShowQuickAddTask] = useState(false);
 
   return (
     <header className="header" data-testid="header">
@@ -14,7 +15,14 @@ export const Header = ({ darkmode, setDarkMode }) => {
         </div>
         <div className="settings">
           <ul>
-            <li data-testid="quickadd-task-action" className="settings_add">
+            <li
+              data-testid="quick-add-task-action"
+              className="settings_add"
+              onClick={() => {
+                setShowQuickAddTask(true);
+                setShouldShowMain(true);
+              }}
+            >
               +
             </li>
             <li
@@ -27,6 +35,12 @@ export const Header = ({ darkmode, setDarkMode }) => {
           </ul>
         </div>
       </nav>
+      <AddTask
+        showAddTaskMain={false}
+        shouldShowMain={shouldShowMain}
+        showQuickAddTask={showQuickAddTask}
+        setShowQuickAddTask={setShowQuickAddTask}
+      />
     </header>
   );
 };

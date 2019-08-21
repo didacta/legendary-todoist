@@ -173,7 +173,7 @@ $generic-bg: #db4c3f;
       &:hover {
         font-weight: bold;
         background-color: #302c2c;
-        -webkit-box-shadow: 0 2px 1gipx 0 rgba(88, 69, 69, 0.781);
+        -webkit-box-shadow: 0 2px 1px 0 rgba(88, 69, 69, 0.781);
 
       }
     }
@@ -496,7 +496,7 @@ header {
     }
 
     button {
-      @include btn("50px");
+      @include btn('50px');
     }
     span {
       @include cancel();
@@ -591,7 +591,7 @@ header {
   }
 
   &__submit {
-    @include btn(100px);
+    @include btn('100px');
   }
   &__cancel {
     @include cancel();
@@ -670,7 +670,7 @@ header {
     @include cancel();
   }
   &__submit {
-    @include btn(90px);
+    @include btn('90px');
   }
 }
 

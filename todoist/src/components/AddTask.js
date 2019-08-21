@@ -4,7 +4,7 @@ import moment from "moment";
 import { firebase } from "../firebase";
 import { useSelectedProjectValue } from "../context";
 import { ProjectOverlay } from "./ProjectOverlay";
-import { TaskDate} from "./TaskDate"
+import { TaskDate } from "./TaskDate";
 export const AddTask = ({
   showAddTaskMain = true,
   shouldShowMain = false,
@@ -109,7 +109,11 @@ export const AddTask = ({
             type="button"
             className="add-task__submit"
             data-testid="add-task"
-            onClick={() => addTask()}
+            onClick={() =>
+              showQuickAddTask
+                ? addTask() && setShowQuickAddTask(false)
+                : addTask()
+            }
           >
             Add Task
           </button>
