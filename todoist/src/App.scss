@@ -141,27 +141,64 @@ $generic-bg: #db4c3f;
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.15);
     background-color: #282828;
     border-color: transparent;
+    svg{
+      fill:#F2C426;
+    }
   }
   .sidebar {
     background-color: #343434;
     color: #fff !important;
     border-color: transparent;
-    &__generic{
-      li{
+    -webkit-box-shadow: 0 1px 3px 0 rgba(88, 69, 69, 0.781);
+
+    &__generic {
+      li {
         color: #fff !important;
+        &.active,
+        &:hover {
+          font-weight: bold;
+          background-color: #302c2c;
+          
+        }
+      }
+     
+    }
+    &__middle {
+      border-color: rgb(46, 12, 12);
+      background-color: #343434;
+      h2{
+        color:white;
+      }
+      &.active,
+      &:hover {
+        font-weight: bold;
+        background-color: #302c2c;
+        -webkit-box-shadow: 0 2px 1gipx 0 rgba(88, 69, 69, 0.781);
+
+      }
+    }
+  
+  &__projects{
+    li {
+      color: #fff !important;
+      &.active,
+      &:hover {
+        font-weight: bold;
+        background-color: #302c2c;
       }
     }
   }
-  
+}
   .tasks {
     background-color: #202020;
     color: #fff;
     border-color: transparent;
-    li{
+    li {
       color: #fff !important;
     }
   }
 }
+
 
 // header
 
