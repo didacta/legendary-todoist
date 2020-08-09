@@ -1,5 +1,5 @@
 import React from "react";
-import { useProjectValue, useProjectsValue } from "../context";
+import { useProjectsValue } from "../context";
 
 export const ProjectOverlay = ({
   setProject,

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { FaMoon } from "react-icons/fa";
-import { FaSun } from "react-icons/fa";
+// import { FaSun } from "react-icons/fa";
 import { AddTask } from "../AddTask";
 
 export const Header = ({ darkmode, setDarkMode }) => {
