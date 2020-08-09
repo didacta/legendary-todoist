@@ -188,13 +188,30 @@ $generic-bg: #db4c3f;
     }
   }
   .tasks {
-    background-color: #202020;
+    background-color: #202020 !important;
     color: #fff;
     border-color: transparent;
     li {
       color: #fff !important;
     }
   }
+  .project-delete-modal__inner {
+    background-color: #202020;
+    box-shadow: 0 1px 2px rgba(68, 5, 5, 0.15);
+  }
+  .add-task__content {
+    background-color: #202020 !important;
+    color: whitesmoke;
+    border-color: $generic-bg;
+  }
+  .task-date__list li {
+    background-color: #202020 !important;
+    border-bottom: 1px solid rgb(26, 15, 15);
+  }
+  .task-date__list li:hover {
+    background-color: #181616 !important;
+  }
+   
 }
 
 // header
