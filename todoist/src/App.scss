@@ -204,6 +204,14 @@ $generic-bg: #db4c3f;
     color: whitesmoke;
     border-color: $generic-bg;
   }
+  .add-task__main {
+    background-color: #202020 !important;
+    color: whitesmoke;
+  }
+  span.add-task__date svg,
+  span.add-task__project svg {
+    fill: $generic-bg;
+  }
   .task-date__list li {
     background-color: #202020 !important;
     border-bottom: 1px solid rgb(26, 15, 15);
