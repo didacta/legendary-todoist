@@ -1,23 +1,22 @@
-import React, { useState } from "react";
-import { FaMoon } from "react-icons/fa";
-// import { FaSun } from "react-icons/fa";
-import { AddTask } from "../AddTask";
+import React, { useState } from 'react';
+import { FaMoon, FaSun } from 'react-icons/fa';
+import { AddTask } from '../AddTask';
 
 export const Header = ({ darkmode, setDarkMode }) => {
   const [shouldShowMain, setShouldShowMain] = useState(false);
   const [showQuickAddTask, setShowQuickAddTask] = useState(false);
 
   return (
-    <header className="header" data-testid="header">
+    <header className='header' data-testid='header'>
       <nav>
-        <div className="logo">
-          <img src="/images/logo.png" alt="Todoist" />
+        <div className='logo'>
+          <img src='/images/logo.png' alt='Todoist' />
         </div>
-        <div className="settings">
+        <div className='settings'>
           <ul>
             <li
-              data-testid="quick-add-task-action"
-              className="settings_add"
+              data-testid='quick-add-task-action'
+              className='settings_add'
               onClick={() => {
                 setShowQuickAddTask(true);
                 setShouldShowMain(true);
@@ -25,12 +24,8 @@ export const Header = ({ darkmode, setDarkMode }) => {
             >
               +
             </li>
-            <li
-              data-testid="dark-mode-action"
-              className="settings__darkmode"
-              onClick={() => setDarkMode(!darkmode)}
-            >
-              <FaMoon />
+            <li data-testid='dark-mode-action' className='settings__darkmode' onClick={() => setDarkMode(!darkmode)}>
+              {!darkmode ? <FaMoon /> : <FaSun />}
             </li>
           </ul>
         </div>
