@@ -211,7 +211,9 @@ $generic-bg: #db4c3f;
   .task-date__list li:hover {
     background-color: #181616 !important;
   }
-   
+  .project-overlay {
+    background-color: #202020;
+  }
 }
 
 // header
@@ -738,10 +740,17 @@ header {
 
 .project-overlay {
   @include box-overlay();
+  margin-top: 10px;
+  padding: 40px;
   background-color: white;
   &__list li {
     @include task-item();
   }
+}
+div.project-overlay li {
+  font-size: 16px;
+  margin-top: 7.5px;
+  line-height: 1.55em;
 }
 .add-task__plus,
 .add-project__plus {
