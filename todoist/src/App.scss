@@ -773,3 +773,10 @@ div.project-overlay li {
   font-size: 14px;
   margin-left: 15px;
 }
+
+
+@media(max-width:500px){
+  .add-task__main{
+    width:300px
+  }
+}
