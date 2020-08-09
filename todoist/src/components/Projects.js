@@ -16,7 +16,7 @@ export const Projects = ({ activeValue = null }) => {
         data-test-id="project-action"
         className={
           active === project.projectId
-            ? "active sidebar_project"
+            ? "active sidebar__project"
             : "sidebar__project"
         }
         onKeyDown={() => {
