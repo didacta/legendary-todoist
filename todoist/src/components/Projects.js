@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import { useSelectedProjectValue, useProjectsValue } from "../context";
-import { IndividualProject } from "./IndividualProject";
+import React, { useState } from 'react';
+import { useSelectedProjectValue, useProjectsValue } from '../context';
+import { IndividualProject } from './IndividualProject';
 
 export const Projects = ({ activeValue = null }) => {
   const [active, setActive] = useState(activeValue);
@@ -9,16 +9,12 @@ export const Projects = ({ activeValue = null }) => {
 
   return (
     projects &&
-    projects.map(project => (
+    projects.map((project) => (
       <li
         key={project.projectId}
         data-doc-id={project.docId}
-        data-test-id="project-action"
-        className={
-          active === project.projectId
-            ? "active sidebar__project"
-            : "sidebar__project"
-        }
+        data-test-id='project-action'
+        className={active === project.projectId ? 'active sidebar__project' : 'sidebar__project'}
         onKeyDown={() => {
           setActive(project.projectId);
           setSelectedProject(project.projectId);
@@ -28,7 +24,7 @@ export const Projects = ({ activeValue = null }) => {
           setSelectedProject(project.projectId);
         }}
       >
-     <IndividualProject project={project}/>
+        <IndividualProject project={project} />
       </li>
     ))
   );

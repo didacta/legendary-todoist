@@ -1,19 +1,19 @@
-import React from "react";
-import { FaSpaceShuttle } from "react-icons/fa";
+import React from 'react';
+import { FaSpaceShuttle } from 'react-icons/fa';
 import moment from 'moment';
-import { FaSun } from "react-icons/fa";
-import { FaRegPaperPlane } from "react-icons/fa";
+import { FaSun } from 'react-icons/fa';
+import { FaRegPaperPlane } from 'react-icons/fa';
 
 export const TaskDate = ({ setTaskDate, showTaskDate, setShowTaskDate }) =>
   showTaskDate && (
-    <div className="task-date" data-testid="task-date-overlay">
-      <ul className="task-date__list">
+    <div className='task-date' data-testid='task-date-overlay'>
+      <ul className='task-date__list'>
         <li
           onClick={() => {
             setShowTaskDate = false;
-            setTaskDate(moment().format("DD/MM/YYYY"));
+            setTaskDate(moment().format('DD/MM/YYYY'));
           }}
-          data-testid="task-date-overlay"
+          data-testid='task-date-overlay'
         >
           <span>
             <FaSpaceShuttle />
@@ -23,9 +23,9 @@ export const TaskDate = ({ setTaskDate, showTaskDate, setShowTaskDate }) =>
         <li
           onClick={() => {
             setShowTaskDate = false;
-            setTaskDate(moment().add(1, 'day').format("DD/MM/YYYY"));
+            setTaskDate(moment().add(1, 'day').format('DD/MM/YYYY'));
           }}
-          data-testid="task-date-tomorrow"
+          data-testid='task-date-tomorrow'
         >
           <span>
             <FaSun />
@@ -35,12 +35,12 @@ export const TaskDate = ({ setTaskDate, showTaskDate, setShowTaskDate }) =>
         <li
           onClick={() => {
             setShowTaskDate = false;
-            setTaskDate(moment().add(7, 'days').format("DD/MM/YYYY"));
+            setTaskDate(moment().add(7, 'days').format('DD/MM/YYYY'));
           }}
-          data-testid="task-date-next-week"
+          data-testid='task-date-next-week'
         >
           <span>
-            <FaRegPaperPlane/>
+            <FaRegPaperPlane />
           </span>
           <span>Next week</span>
         </li>

@@ -1,21 +1,16 @@
-import { collatedTasks } from "../constants";
+import { collatedTasks } from '../constants';
 
-export const getTitle = (projects, projectId) =>
-projects.find(project=> project.projectId === projectId);
+export const getTitle = (projects, projectId) => projects.find((project) => project.projectId === projectId);
 
-export const getCollatedTitle = (projects, key) =>
-collatedTasks.find(project => project.key === key);
+export const getCollatedTitle = (projects, key) => collatedTasks.find((project) => project.key === key);
 
-
-export const collatedTasksExist = selectedProject =>
-  collatedTasks.find(task => task.key === selectedProject);
+export const collatedTasksExist = (selectedProject) => collatedTasks.find((task) => task.key === selectedProject);
 export const generatePushId = (() => {
-  const PUSH_CHARS =
-    "-0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ_abcdefghijklmnopqrstuvwxyz";
+  const PUSH_CHARS = '-0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ_abcdefghijklmnopqrstuvwxyz';
 
   const lastRandChars = [];
 
-  return function() {
+  return function () {
     let now = new Date().getTime();
 
     const timeStampChars = new Array(8);
@@ -24,7 +19,7 @@ export const generatePushId = (() => {
       now = Math.floor(now / 64);
     }
 
-    let id = timeStampChars.join("");
+    let id = timeStampChars.join('');
 
     for (i = 0; i < 12; i++) {
       id += PUSH_CHARS.charAt(lastRandChars[i]);
