@@ -133,20 +133,26 @@ $generic-bg: #db4c3f;
 
 .darkmode {
   background-color: #202020;
+  transition: background-color 2s;
   border-color: transparent;
 
   header {
     -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.15);
     background-color: #282828;
+    transition: background-color 2s;
     border-color: transparent;
     svg {
       fill: #f2c426;
+      transition: fill 2s;
     }
   }
   .sidebar {
     background-color: #343434;
+    transition: background-color 2s;
+
     color: #fff !important;
+
     border-color: transparent;
     -webkit-box-shadow: 0 1px 3px 0 rgba(88, 69, 69, 0.781);
 
@@ -157,20 +163,23 @@ $generic-bg: #db4c3f;
         &:hover {
           font-weight: bold;
           background-color: #302c2c;
+          transition: background-color 2s;
         }
       }
     }
     &__middle {
       border-color: rgb(46, 12, 12);
-      background-color: #343434;
+      transition: background-color 1s;
       h2 {
         color: white;
       }
       &.active,
       &:hover {
         font-weight: bold;
-        background-color: #302c2c;
+        background-color: #943c3c;
+        transition: background-color 0.51s;
         -webkit-box-shadow: 0 2px 1px 0 rgba(88, 69, 69, 0.781);
+        // transition: background-color 2s;
       }
     }
 
@@ -181,6 +190,7 @@ $generic-bg: #db4c3f;
         &:hover {
           font-weight: bold;
           background-color: #302c2c;
+          transition: background-color 2s;
 
           align-items: center;
         }
@@ -189,10 +199,13 @@ $generic-bg: #db4c3f;
   }
   .tasks {
     background-color: #202020 !important;
+    transition: background-color 2s, color 2s;
     color: #fff;
+
     border-color: transparent;
     li {
       color: #fff !important;
+      transition: color 2s;
     }
   }
   .project-delete-modal__inner {
@@ -316,6 +329,8 @@ header {
               display: flex;
 
               svg {
+                fill: white;
+                transition: fill 2s;
                 width: 20px;
                 height: 20px;
               }
@@ -338,6 +353,7 @@ header {
   overflow-y: hidden;
   border-right: $generic-border;
   background-color: #fafafa;
+  transition: background-color 2s;
 
   @include mq('900px') {
     display: none;
@@ -387,6 +403,8 @@ header {
     &:hover {
       font-weight: bold;
       background-color: white;
+      transition: background-color 2s;
+
     }
 
     &:nth-child(1) {
@@ -430,6 +448,7 @@ header {
   }
 
   &__middle {
+    padding-top: 20px;
     margin-top: 20px;
     margin-bottom: 20px;
     display: -webkit-box;
@@ -499,6 +518,8 @@ header {
       &:hover {
         font-weight: bold;
         background-color: white;
+        transition: background-color 2s;
+
       }
     }
   }
@@ -518,6 +539,8 @@ header {
     top: 10px;
     right: 250px;
     background-color: white;
+    transition: background-color 2s;
+
     cursor: auto;
     p {
       margin-top: 5px;
@@ -562,6 +585,7 @@ header {
 .tasks {
   width: 656px;
   background-color: white;
+  transition: background-color 2s;
   margin-left: 266px;
   border-right: $generic-border;
   min-height: calc(100vh);
@@ -615,6 +639,11 @@ header {
       }
     }
   }
+}
+
+main{
+  background-color:whitesmoke;
+  transition:   background-color 2s;
 }
 
 .add-project {

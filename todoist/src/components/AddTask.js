@@ -5,6 +5,8 @@ import { firebase } from '../firebase';
 import { useSelectedProjectValue } from '../context';
 import { ProjectOverlay } from './ProjectOverlay';
 import { TaskDate } from './TaskDate';
+import { useSpring, animated } from 'react-spring';
+
 export const AddTask = ({ showAddTaskMain = true, shouldShowMain = false, showQuickAddTask, setShowQuickAddTask }) => {
   const [task, setTask] = useState('');
   const [taskDate, setTaskDate] = useState('');
@@ -12,6 +14,7 @@ export const AddTask = ({ showAddTaskMain = true, shouldShowMain = false, showQu
   const [showMain, setShowMain] = useState('');
   const [showProjectOverlay, setShowProjectOverlay] = useState(false);
   const [showTaskDate, setShowTaskDate] = useState(false);
+  const props = useSpring({ opacity: 1, from: { opacity: 0 } });
 
   const { selectedProject } = useSelectedProjectValue();
 
@@ -47,6 +50,7 @@ export const AddTask = ({ showAddTaskMain = true, shouldShowMain = false, showQu
   };
 
   return (
+
     <div className={showQuickAddTask ? 'add-task add-task__overlay' : 'add-tasl'} data-testid='add-task-comp'>
       {showAddTaskMain && (
         <div className='add-task__shallow' data-testid='show-main-action' onClick={() => setShowMain(!showMain)}>
@@ -54,7 +58,8 @@ export const AddTask = ({ showAddTaskMain = true, shouldShowMain = false, showQu
           <span className='add_task__text'>Add Text</span>
         </div>
       )}
-      {(showMain || showQuickAddTask) && (
+      {(showMain || showQuickAddTask) && 
+      (
         <div className='add-task__main' data-testid='add-task-main'>
           {showQuickAddTask && (
             <>
