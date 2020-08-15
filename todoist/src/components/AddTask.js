@@ -5,7 +5,7 @@ import { firebase } from '../firebase';
 import { useSelectedProjectValue } from '../context';
 import { ProjectOverlay } from './ProjectOverlay';
 import { TaskDate } from './TaskDate';
-import { useSpring } from 'react-spring';
+// import { useSpring } from 'react-spring';
 
 export const AddTask = ({ showAddTaskMain = true, shouldShowMain = false, showQuickAddTask, setShowQuickAddTask }) => {
   const [task, setTask] = useState('');
